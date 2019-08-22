@@ -24,6 +24,8 @@ classdef tree
         % Hold the data at each node
         Node = { [] };
         
+        tag = {[]};
+        
         % Index of the parent node. The root of the tree as a parent index
         % equal to 0.
         Parent = [ 0 ]; %#ok<NBRAK>
@@ -107,6 +109,7 @@ classdef tree
                 obj.Node = { data };
                 obj.Parent = 0;
                 ID = 1;
+                obj.tag = {num2str(ID)};
                 return
             end
             
@@ -118,7 +121,8 @@ classdef tree
                 parent ];
             
             ID = numel(obj.Node);
-        
+            
+            obj.tag {end+1, 1} = num2str(ID);
         end
         
         function flag = isleaf(obj, ID)

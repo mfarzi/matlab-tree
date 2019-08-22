@@ -56,7 +56,7 @@ function IDs = depthfirstiterator(obj, startNode, sorted)
            
            if sorted && numel(children) > 1
                
-               contents = obj.Node(children);
+               contents = obj.tag(children);
                [~, sorting_array] = sortrows(contents);
                children = children(sorting_array);
                

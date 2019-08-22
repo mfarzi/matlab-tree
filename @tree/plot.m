@@ -131,7 +131,7 @@ function [vLineHandleTree, hLineHandleTree, textHandleTree] = plot(obj, heightTr
             end
             
             children = obj.getchildren(i);
-            contents = obj.Node(children);
+            contents = obj.tag(children);
             [ ~, sorting_array ] = sortrows(contents);
             children = children(sorting_array);
             
@@ -293,7 +293,7 @@ function [vLineHandleTree, hLineHandleTree, textHandleTree] = plot(obj, heightTr
         if drawlabels
             
             % The label = content
-            content = obj.get(i);
+            content = obj.tag{i};
             if isempty(content)
                 content = 'ø';
             end

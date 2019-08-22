@@ -18,6 +18,7 @@ function obj = removenode(obj , node)
     % Remove node
     parents(node) = [];
     nodes(node) = [];
+    obj.tag(node) = [];
     
     % Shift subsequent indices
     toShift = parents > node;
